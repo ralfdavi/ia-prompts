@@ -17,8 +17,8 @@ Connect these MCPs on your claude.ai account:
 At the bottom of the prompt (STEP 6), replace:
 
 ```
-channel_id=U09SSQG5QQ7        ← your Slack user ID (Slack > profile > ⋯ > Copy member ID)
-to=ralf.filho@caylent.com     ← your email
+channel_id=UXXXXXXXXXX         ← your Slack user ID (Slack > profile > ⋯ > Copy member ID)
+to=you@yourcompany.com        ← your email
 ```
 
 Also update the Fixed Configuration block at the top of the prompt:
@@ -62,7 +62,7 @@ The trigger is isolated to the Atlassian connector that was active when it was c
 | Connector | Account | Used by |
 |-----------|---------|---------|
 | Atlassian #1 (existing) | member1@client.com | Standup trigger |
-| Atlassian #2 (add this) | ralf.filho@caylent.com | Interactive Claude sessions |
+| Atlassian #2 (add this) | you@yourcompany.com | Interactive Claude sessions |
 
 > In interactive sessions, if Claude needs to pick between two connectors, specify explicitly: *"use [Client] Jira"* or *"use Caylent Jira"*.
 
@@ -203,8 +203,8 @@ _(sorted by status: Done first, Backlog last; tickets with no movement are exclu
 ## STEP 6 — Send notification
 
 Try in order, stop at first success:
-1. slack_send_message → channel_id=U09SSQG5QQ7   ← REPLACE with your Slack user ID
-2. Gmail create_draft → to=ralf.filho@caylent.com  ← REPLACE with your email
+1. slack_send_message → channel_id=UXXXXXXXXXX    ← REPLACE with your Slack user ID
+2. Gmail create_draft → to=you@yourcompany.com    ← REPLACE with your email
 3. stdout only
 
 Always print the full report and "Sent via: [Slack/Gmail/stdout]" to stdout.
